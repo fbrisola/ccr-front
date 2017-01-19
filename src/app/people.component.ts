@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'person',
-    templateUrl: 'person.component.html',
+    selector: 'people',
+    templateUrl: 'people.component.html',
 })
 
-export class PersonComponent {
+export class PeopleComponent {
     title = 'Membros';
 }

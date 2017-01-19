@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
     template: '',
 })
 
-export class AddressComponent {
+export class AddressesComponent {
     
 }
