@@ -6,16 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard.component';
-import { PeopleComponent } from './people.component';
-import { AddressesComponent } from './addresses.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AddressesComponent } from './addresses/addresses.component';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    PeopleComponent,
-    AddressesComponent
+    AddressesComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
