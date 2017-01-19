@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'address',
-    template: '',
+    selector: 'addresses',
+    templateUrl: './addresses.component.html',
 })
 
 export class AddressesComponent {
-    
+    title = 'Endereços';
 }
