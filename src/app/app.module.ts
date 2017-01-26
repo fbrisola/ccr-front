@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { PeopleComponent } from './people/people.component';
+import { PersonEditComponent } from './person-edit/person-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AddressesComponent,
-    PeopleComponent
+    PeopleComponent,
+    PersonEditComponent
   ],
   imports: [
     BrowserModule,
