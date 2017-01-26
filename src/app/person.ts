@@ -7,5 +7,5 @@ export class Person {
     birthdate: string;
     cel: string;
     email: string;
-    address: Address;
+//    address: Address;
 }

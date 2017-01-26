@@ -13,43 +13,17 @@
                         <th>Nascimento</th>
                         <th>Celular</th>
                         <th>E-mail</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Fernando</td>
-                        <td>Brisola Batista</td>
-                        <td>03/12/1969</td>
-                        <td>+55 11 99291-3413</td>
-                        <td>fbrisola@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>Celia Magda</td>
-                        <td>Moreira Marques Brisola Batista</td>
-                        <td>08/07/1971</td>
-                        <td>+55 11 99433-0180</td>
-                        <td>celiammarques@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>Raphael</td>
-                        <td>Moreira Marques Brisola Batista</td>
-                        <td>07/04/2005</td>
-                        <td>&nbsp;</td>
-                        <td>raphaelmmbb@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>Daniel</td>
-                        <td>Moreira Marques Brisola Batista</td>
-                        <td>09/04/2009</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>Fernanda</td>
-                        <td>Moreira Marques Brisola Batista</td>
-                        <td>05/06/2012</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                    <tr *ngFor="let person of people" (click)="onSelect(person)">
+                        <td>{{person.name}}</td>
+                        <td>{{person.lastname}}</td>
+                        <td>{{person.birthdate}}</td>
+                        <td>{{person.cel}}</td>
+                        <td>{{person.email}}</td>
+                        <td><i class="fa fa-pencil"></i></td>
                     </tr>
                 </tbody>
             </table>
