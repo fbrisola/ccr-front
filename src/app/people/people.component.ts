@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Person } from '../person';
 
@@ -10,21 +11,20 @@ import { Person } from '../person';
 
 export class PeopleComponent implements OnInit {
   title = 'Membros';
-  people = PEOPLE;
+  people: Person[];
   selectedPerson: Person;
 
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.getPeople();
   }
 
-  getPeople() {
-
-  }
-
-  onSelect(person: Person): void {
-    this.selectedPerson = person;
+  getPeople(): void {
+    this.people = PEOPLE;
   }
 
 }

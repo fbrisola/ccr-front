@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { PeopleComponent } from './people/people.component';
 import { PersonEditComponent } from './person-edit/person-edit.component';
+import { PersonNewComponent } from './person-new/person-new.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PersonEditComponent } from './person-edit/person-edit.component';
     DashboardComponent,
     AddressesComponent,
     PeopleComponent,
-    PersonEditComponent
+    PersonEditComponent,
+    PersonNewComponent
   ],
   imports: [
     BrowserModule,

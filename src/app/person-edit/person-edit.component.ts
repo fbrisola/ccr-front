@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PeopleComponent } from '../people/people.component';
+import { Person } from '../person';
 
 @Component({
   selector: 'app-person-edit',
@@ -8,10 +9,13 @@ import { PeopleComponent } from '../people/people.component';
   styleUrls: ['./person-edit.component.css']
 })
 export class PersonEditComponent implements OnInit {
-  title = 'Novo membro';
-  constructor() { }
+  title = 'Editar membro';
 
-  ngOnInit() {
+  constructor(
+  ) { }
+
+  ngOnInit(): void {
   }
+
 
 }

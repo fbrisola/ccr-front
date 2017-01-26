@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let person of people" (click)="onSelect(person)">
+                    <tr *ngFor="let person of people" (click)="editPerson(person)">
                         <td>{{person.name}}</td>
                         <td>{{person.lastname}}</td>
                         <td>{{person.birthdate}}</td>
