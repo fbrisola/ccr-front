@@ -27,6 +27,11 @@ export class PeopleComponent implements OnInit {
     this.people = PEOPLE;
   }
 
+  onSelect(person: Person): void {
+    this.selectedPerson = person;
+    console.log(person.id);
+  }
+
 }
 
 const PEOPLE: Person[] = [

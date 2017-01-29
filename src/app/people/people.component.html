@@ -17,17 +17,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let person of people" (click)="editPerson(person)">
+                    <tr *ngFor="let person of people">
                         <td>{{person.name}}</td>
                         <td>{{person.lastname}}</td>
                         <td>{{person.birthdate}}</td>
                         <td>{{person.cel}}</td>
                         <td>{{person.email}}</td>
-                        <td><i class="fa fa-pencil"></i></td>
+                        <td><a routerLink="/edit/{{person.id}}" routerLinkActive="active"><i class="fa fa-pencil" (click)="onSelect(person)"></i></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
             <!-- /.table-responsive -->
+            <div *ngIf="selectedPerson">
+                <h2>
+                    {{selectedPerson.name | uppercase}} selecionado.
+                </h2>
+            </div>
         </div>
         <!-- /.panel-body -->
     </div>
