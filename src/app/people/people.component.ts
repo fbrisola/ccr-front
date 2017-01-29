@@ -27,7 +27,7 @@ export class PeopleComponent implements OnInit {
   }
 
   getPeople(): void {
-    this.people = this.personService.getPeople();
+    this.personService.getPeople().then(people => this.people = people);
   }
 
   onSelect(person: Person): void {
