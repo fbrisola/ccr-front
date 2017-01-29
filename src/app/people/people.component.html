@@ -23,20 +23,15 @@
                         <td>{{person.birthdate}}</td>
                         <td>{{person.cel}}</td>
                         <td>{{person.email}}</td>
-                        <td><a routerLink="/edit/{{person.id}}" routerLinkActive="active"><i class="fa fa-pencil" (click)="onSelect(person)"></i></a>
-                        </td>
+                        <td><i class="fa fa-pencil" (click)="onSelect(person)"></i></td>
                     </tr>
                 </tbody>
             </table>
             <!-- /.table-responsive -->
-            <div *ngIf="selectedPerson">
-                <h2>
-                    {{selectedPerson.name | uppercase}} selecionado.
-                </h2>
-            </div>
         </div>
         <!-- /.panel-body -->
     </div>
     <!-- /.panel -->
 </div>
 <!-- /.col-lg-12 -->
+<app-person-edit [person]="selectedPerson"></app-person-edit>

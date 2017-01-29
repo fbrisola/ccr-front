@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -13,6 +13,8 @@ import { Person } from '../person';
 })
 export class PersonEditComponent implements OnInit {
   title = 'Editar membro';
+
+  @Input()
   person: Person;
 
   constructor(
