@@ -32,6 +32,7 @@ export class PeopleComponent implements OnInit {
 
   onSelect(person: Person): void {
     this.selectedPerson = person;
+    
   }
 
 }
