@@ -12,7 +12,7 @@ import { PersonService } from '../person.service';
 })
 
 export class PeopleComponent implements OnInit {
-  title = 'Membros';
+  title = 'Lista de Membros';
   people: Person[];
   selectedPerson: Person;
 

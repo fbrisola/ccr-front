@@ -31,4 +31,8 @@ export class PersonEditComponent implements OnInit {
       .subscribe(person => this.person = person);
   }
 
+    goBack(): void {
+        this.location.back();
+    }
+
 }

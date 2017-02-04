@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -11,6 +11,7 @@ import { AddressesComponent } from './addresses/addresses.component';
 import { PeopleComponent } from './people/people.component';
 import { PersonEditComponent } from './person-edit/person-edit.component';
 import { PersonNewComponent } from './person-new/person-new.component';
+import { PersonService } from './person.service';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,9 @@ import { PersonNewComponent } from './person-new/person-new.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 

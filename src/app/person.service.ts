@@ -14,9 +14,8 @@ export class PersonService {
   }
 
   getPerson(id: number): Promise<Person> {
- //   return Promise.resolve(PEOPLE[id]);
- return this.getPeople()
-               .then(people => people.find(person => person.id === id));
+    return this.getPeople()
+      .then(people => people.find(person => person.id === id));
   }
 
 }

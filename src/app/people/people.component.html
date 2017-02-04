@@ -1,7 +1,7 @@
 <div class="col-lg-12">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h2>{{title}}</h2>
+            <i class="fa fa-user"></i> {{title}}
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -23,7 +23,7 @@
                         <td>{{person.birthdate}}</td>
                         <td>{{person.cel}}</td>
                         <td>{{person.email}}</td>
-                        <td><a routerLink="/edit/{{person.id}}" routerLinkActive="active"><i class="fa fa-pencil" (click)="onSelect(person)"></i></a></td>
+                        <td><a routerLink="/edit/{{person.id}}" routerLinkActive="active"><i class="fa fa-edit" (click)="onSelect(person)"></i></a></td>
                     </tr>
                 </tbody>
             </table>
