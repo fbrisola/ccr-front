@@ -1,38 +1,42 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+// Obbservables
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
 import { Person } from './person';
-import { PEOPLE } from './mock-people';
 
 @Injectable()
 export class PersonService {
-  //private headers = new Headers({ 'Content-Type': 'application/json' });
-  private peopleUrl = 'http://ccr-back.dev/api/v1/people' //'api/people';  // URL to web api
+  private headers = new Headers({ 'Content-Type': 'application/json' });
+  private peopleUrl = 'http://localhost/api/v1/people' // URL to web api
+  
+  constructor(private http: Http) { }
 
-  constructor(
-    private http: Http
-  ) { }
+  // Fetch all existing people
+  getPeople(): Observable<Person[]> {
 
-  getPeople(): Promise<Person[]> {
+    // ...using get request
     return this.http.get(this.peopleUrl)
-      .toPromise()
-      .then(response => response.json().data as Person[])
-      .catch(this.handleError);
+      // ...and calling .json() on the response to return data
+      .map((res: Response) => res.json())
+      //...errors if any
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+
   }
 
-  getPerson(id: number): Promise<Person> {
-    const url = `${this.peopleUrl}/${id}`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json().data as Person)
-      .catch(this.handleError);
-  }
+  // Fetch person(id)
+  getPerson(id): Observable<Person> {
+    // ...using get request
+    return this.http.get(`${this.peopleUrl}/${id}`)
+      // ...and calling .json() on the response to return data
+      .map((res: Response) => res.json())
+      //...errors if any
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
   }
-
 
 }

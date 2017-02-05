@@ -11,8 +11,8 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'people', component: PeopleComponent },
     { path: 'addresses', component: AddressesComponent },
-    { path: 'people/new', component: PersonNewComponent },
-    { path: 'edit/:id', component: PersonEditComponent }
+//    { path: 'people/new', component: PersonNewComponent },
+    { path: 'people/:id', component: PersonEditComponent }
 ];
 
 @NgModule({

@@ -26,13 +26,17 @@ export class PersonEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getPerson();
+  }
+
+  getPerson(): void {
     this.route.params
       .switchMap((params: Params) => this.personService.getPerson(+params['id']))
       .subscribe(person => this.person = person);
   }
 
-    goBack(): void {
-        this.location.back();
-    }
+  goBack(): void {
+    this.location.back();
+  }
 
 }

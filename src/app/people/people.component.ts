@@ -25,13 +25,21 @@ export class PeopleComponent implements OnInit {
     this.getPeople();
   }
 
-  getPeople(): void {
-    this.personService.getPeople().then(people => this.people = people);
-  }
 
   onSelect(person: Person): void {
     this.selectedPerson = person;
-    
+
+  }
+
+  getPeople() {
+    // Get all people
+    this.personService.getPeople()
+      .subscribe(
+      people => this.people = people, //Bind to view
+      err => {
+        // Log errors if any
+        console.log(err);
+      });
   }
 
 }
