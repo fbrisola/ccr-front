@@ -7,8 +7,8 @@ import { PEOPLE } from './mock-people';
 
 @Injectable()
 export class PersonService {
-  private headers = new Headers({ 'Content-Type': 'application/json' });
-  private peopleUrl = 'api/people';  // URL to web api
+  //private headers = new Headers({ 'Content-Type': 'application/json' });
+  private peopleUrl = 'http://ccr-back.dev/api/v1/people' //'api/people';  // URL to web api
 
   constructor(
     private http: Http

@@ -18,7 +18,6 @@ export class PeopleComponent implements OnInit {
 
 
   constructor(
-    private router: Router,
     private personService: PersonService
   ) { }
 
