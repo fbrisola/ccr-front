@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/operator/finally';
+import 'rxjs/add/operator/finally';
 
 import { PeopleComponent } from '../people/people.component';
 import { Person } from '../person';
@@ -22,7 +24,8 @@ export class PersonEditComponent implements OnInit {
   constructor(
     private personService: PersonService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +36,12 @@ export class PersonEditComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.personService.getPerson(+params['id']))
       .subscribe(person => this.person = person);
+  }
+
+  save(): void {
+    this.personService.updatePerson(this.person)
+    .subscribe(person => this.person = person);
+    this.router.navigateByUrl('people');
   }
 
   goBack(): void {
