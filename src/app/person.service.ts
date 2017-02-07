@@ -49,4 +49,12 @@ export class PersonService {
                          .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }   
 
+// Delete a person
+deletePerson(id): Observable<Person> {
+  return this.http.delete(`${this.peopleUrl}/${id}`) // ...using put request
+                         .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+                         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if an
+}
+
+
 }

@@ -18,7 +18,8 @@ export class PeopleComponent implements OnInit {
 
 
   constructor(
-    private personService: PersonService
+    private personService: PersonService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -39,6 +40,20 @@ export class PeopleComponent implements OnInit {
       err => {
         // Log errors if any
         console.log(err);
+      });
+  }
+
+  deletePerson(id: number) {
+    this.personService.deletePerson(id)
+      .subscribe(
+      res => {
+        console.log(res)
+      },
+      err => {
+        console.log(err)
+      },
+      () => {
+        this.getPeople()
       });
   }
 
