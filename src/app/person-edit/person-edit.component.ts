@@ -25,7 +25,6 @@ export class PersonEditComponent implements OnInit {
     private personService: PersonService,
     private route: ActivatedRoute,
     private location: Location,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,8 +39,14 @@ export class PersonEditComponent implements OnInit {
 
   save(): void {
     this.personService.updatePerson(this.person)
-    .subscribe(person => this.person = person);
-    this.router.navigateByUrl('people');
+      .subscribe(
+      person => this.person = person,
+      err => {
+        console.log(err)
+      },
+      () => {
+        this.goBack();
+      });
   }
 
   goBack(): void {

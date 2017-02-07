@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addresses.component.css']
 })
 export class AddressesComponent implements OnInit {
-  title = 'Endereços';
+  title = 'Lista de Endereços';
   
   constructor() { }
 
